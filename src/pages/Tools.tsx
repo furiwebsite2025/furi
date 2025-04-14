@@ -308,9 +308,7 @@ const Tools = () => {
           <AnimatedElement animation="fade-in">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-2xl font-bold mb-4">Need More Advanced Marketing Tools?</h2>
-              <p className="text-gray-600 mb-8">
-                These free tools are just the beginning. Explore our SmartCampaigns™ platform for AI-powered marketing automation and campaign orchestration.
-              </p>
+              <p className="text-gray-600 mb-8">These free tools are just the beginning. Explore our SmartCampaigns platform for AI-powered marketing automation and campaign orchestration.</p>
               <Link to="/services#smart-campaigns" className="inline-block bg-furi-red text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">Explore SmartCampaigns</Link>
             </div>
           </AnimatedElement>
