@@ -1,32 +1,26 @@
 
-import { useState } from "react";
+import { useEffect } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
-import { useToast } from "@/hooks/use-toast";
-import { useEffect } from "react";
 
 const Contact = () => {
-  const { toast } = useToast();
-  
-  // Load JotForm script when component mounts
+  // Load Fillout form when component mounts
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://form.jotform.com/jsform/251001055179447";
-    script.async = true;
-    
-    // Find the container element and append the script
-    const jotformContainer = document.getElementById("jotform-container");
-    if (jotformContainer) {
-      // Clear any existing content
-      jotformContainer.innerHTML = "";
-      jotformContainer.appendChild(script);
+    // Make sure any existing script is removed
+    const existingScript = document.querySelector('script[src="https://server.fillout.com/embed/v1/"]');
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = "https://server.fillout.com/embed/v1/";
+      script.async = true;
+      document.body.appendChild(script);
     }
     
-    // Cleanup function
+    // Clean up on component unmount
     return () => {
-      if (jotformContainer && script.parentNode === jotformContainer) {
-        jotformContainer.removeChild(script);
+      const script = document.querySelector('script[src="https://server.fillout.com/embed/v1/"]');
+      if (script && script.parentNode) {
+        script.parentNode.removeChild(script);
       }
     };
   }, []);
@@ -45,7 +39,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Info and JotForm */}
+      {/* Contact Info and Fillout Form */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -87,11 +81,14 @@ const Contact = () => {
             </AnimatedElement>
 
             <AnimatedElement animation="slide-up">
-              <div className="bg-gray-50 rounded-lg p-8 shadow-sm" id="jotform-container">
-                {/* JotForm will be loaded here via the useEffect hook */}
-                <div className="flex justify-center items-center h-64">
-                  <p className="text-gray-500">Loading form...</p>
-                </div>
+              <div className="bg-gray-50 rounded-lg p-8 shadow-sm h-full flex justify-center items-center">
+                <div 
+                  style={{width:"100%", height:"500px"}} 
+                  data-fillout-id="o7DUk3DcUNus" 
+                  data-fillout-embed-type="standard" 
+                  data-fillout-inherit-parameters 
+                  data-fillout-dynamic-resize
+                ></div>
               </div>
             </AnimatedElement>
           </div>

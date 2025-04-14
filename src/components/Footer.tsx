@@ -17,10 +17,10 @@ const Footer = () => {
           </div>
           
           <div className="flex space-x-4">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-furi-red transition-colors">
+            <a href="https://in.linkedin.com/company/furiglobal" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-furi-red transition-colors">
               <Linkedin size={18} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-furi-red transition-colors">
+            <a href="https://www.instagram.com/furishorts" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-furi-red transition-colors">
               <Instagram size={18} />
             </a>
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-furi-red transition-colors">

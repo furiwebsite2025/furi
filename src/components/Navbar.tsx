@@ -56,7 +56,7 @@ const Navbar = ({ scrolled }: NavbarProps) => {
             to="/tools"
             className="bg-furi-red text-white px-5 py-2 rounded-md font-medium text-sm transition-all hover:bg-opacity-90 hover:shadow-md"
           >
-            Tools
+            Free Tools
           </Link>
         </nav>
 
@@ -93,7 +93,7 @@ const Navbar = ({ scrolled }: NavbarProps) => {
               className="bg-furi-red text-white px-5 py-2 rounded-md font-medium text-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Tools
+              Free Tools
             </Link>
           </div>
         </div>
