@@ -11,6 +11,7 @@ import Impact from "./pages/Impact";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Tools from "./pages/Tools";
+import Privacy from "./pages/Privacy";
 import NotFound from "./pages/NotFound";
 import Layout from "./components/Layout";
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route path="about" element={<About />} />
             <Route path="contact" element={<Contact />} />
             <Route path="tools" element={<Tools />} />
+            <Route path="privacy" element={<Privacy />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
