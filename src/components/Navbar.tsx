@@ -28,12 +28,12 @@ const Navbar = ({ scrolled }: NavbarProps) => {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-white/95 backdrop-blur-sm shadow-sm py-3"
-          : "bg-transparent py-5"
+          : "bg-transparent py-4"
       )}
     >
       <div className="container mx-auto px-6 lg:px-8 flex items-center justify-between">
         <Link to="/" className="flex items-center">
-          <FuriLogo className="h-10 md:h-12" />
+          <FuriLogo className="h-7 md:h-8" />
         </Link>
 
         {/* Desktop Navigation */}
