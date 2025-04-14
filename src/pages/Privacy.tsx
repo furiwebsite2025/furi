@@ -18,7 +18,7 @@ const Privacy = () => {
             <SectionHeading
               title="Privacy Policy"
               subtitle="Last updated April 14, 2025"
-              alignment="center"
+              align="center"
             />
           </AnimatedElement>
         </div>
