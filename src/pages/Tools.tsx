@@ -1,24 +1,24 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Copy, Download, QrCode } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import { useToast } from "@/hooks/use-toast";
-
 const Tools = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [activeTab, setActiveTab] = useState("whatsapp");
-  
+
   // WhatsApp Chat Link Generator
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [whatsappMessage, setWhatsappMessage] = useState("");
   const [whatsappLink, setWhatsappLink] = useState("");
-  
+
   // Google Reviews QR Code Generator
   const [placeId, setPlaceId] = useState("");
   const [qrCodeUrl, setQrCodeUrl] = useState("");
-  
+
   // Email Signature Generator
   const [name, setName] = useState("");
   const [position, setPosition] = useState("");
@@ -26,7 +26,6 @@ const Tools = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [website, setWebsite] = useState("furiglobal.in");
-  
   const handleWhatsappGenerate = (e: React.FormEvent) => {
     e.preventDefault();
     const formattedNumber = whatsappNumber.replace(/[^0-9]/g, "");
@@ -34,7 +33,6 @@ const Tools = () => {
     const link = `https://wa.me/${formattedNumber}${encodedMessage ? `?text=${encodedMessage}` : ""}`;
     setWhatsappLink(link);
   };
-  
   const handleQrCodeGenerate = (e: React.FormEvent) => {
     e.preventDefault();
     if (placeId) {
@@ -42,27 +40,21 @@ const Tools = () => {
       setQrCodeUrl(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(reviewUrl)}`);
     }
   };
-  
   const copyToClipboard = (text: string, message: string) => {
     navigator.clipboard.writeText(text).then(() => {
       toast({
         title: "Copied!",
         description: message,
-        variant: "default",
+        variant: "default"
       });
     });
   };
-  
-  return (
-    <div className="pt-28">
+  return <div className="pt-28">
       {/* Tools Header */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <AnimatedElement animation="fade-in">
-            <SectionHeading
-              title="Marketing Tools"
-              subtitle="Free tools to help you streamline your marketing efforts"
-            />
+            <SectionHeading title="Marketing Tools" subtitle="Free tools to help you streamline your marketing efforts" />
           </AnimatedElement>
         </div>
       </section>
@@ -71,28 +63,13 @@ const Tools = () => {
       <section className="py-8 bg-white border-b">
         <div className="container mx-auto px-6">
           <div className="flex flex-wrap justify-center gap-4">
-            <button
-              onClick={() => setActiveTab("whatsapp")}
-              className={`px-6 py-2 rounded-md font-medium transition-all ${
-                activeTab === "whatsapp" ? "bg-furi-red text-white" : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-              }`}
-            >
+            <button onClick={() => setActiveTab("whatsapp")} className={`px-6 py-2 rounded-md font-medium transition-all ${activeTab === "whatsapp" ? "bg-furi-red text-white" : "bg-gray-100 text-gray-800 hover:bg-gray-200"}`}>
               WhatsApp Chat Link
             </button>
-            <button
-              onClick={() => setActiveTab("reviews")}
-              className={`px-6 py-2 rounded-md font-medium transition-all ${
-                activeTab === "reviews" ? "bg-furi-red text-white" : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-              }`}
-            >
+            <button onClick={() => setActiveTab("reviews")} className={`px-6 py-2 rounded-md font-medium transition-all ${activeTab === "reviews" ? "bg-furi-red text-white" : "bg-gray-100 text-gray-800 hover:bg-gray-200"}`}>
               Google Reviews QR Code
             </button>
-            <button
-              onClick={() => setActiveTab("email")}
-              className={`px-6 py-2 rounded-md font-medium transition-all ${
-                activeTab === "email" ? "bg-furi-red text-white" : "bg-gray-100 text-gray-800 hover:bg-gray-200"
-              }`}
-            >
+            <button onClick={() => setActiveTab("email")} className={`px-6 py-2 rounded-md font-medium transition-all ${activeTab === "email" ? "bg-furi-red text-white" : "bg-gray-100 text-gray-800 hover:bg-gray-200"}`}>
               Email Signature
             </button>
           </div>
@@ -104,8 +81,7 @@ const Tools = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             {/* WhatsApp Chat Link Generator */}
-            {activeTab === "whatsapp" && (
-              <AnimatedElement animation="fade-in">
+            {activeTab === "whatsapp" && <AnimatedElement animation="fade-in">
                 <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
                   <h2 className="text-2xl font-bold mb-6">WhatsApp Chat Link Generator</h2>
                   <p className="text-gray-600 mb-8">
@@ -117,75 +93,42 @@ const Tools = () => {
                       <label htmlFor="whatsapp-number" className="block text-sm font-medium text-gray-700 mb-1">
                         WhatsApp Number (with country code)
                       </label>
-                      <input
-                        type="text"
-                        id="whatsapp-number"
-                        value={whatsappNumber}
-                        onChange={(e) => setWhatsappNumber(e.target.value)}
-                        placeholder="e.g., 919876543210"
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                      />
+                      <input type="text" id="whatsapp-number" value={whatsappNumber} onChange={e => setWhatsappNumber(e.target.value)} placeholder="e.g., 919876543210" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                     </div>
                     <div>
                       <label htmlFor="whatsapp-message" className="block text-sm font-medium text-gray-700 mb-1">
                         Pre-filled Message (optional)
                       </label>
-                      <textarea
-                        id="whatsapp-message"
-                        value={whatsappMessage}
-                        onChange={(e) => setWhatsappMessage(e.target.value)}
-                        placeholder="e.g., Hi, I'm interested in your services."
-                        rows={3}
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                      ></textarea>
+                      <textarea id="whatsapp-message" value={whatsappMessage} onChange={e => setWhatsappMessage(e.target.value)} placeholder="e.g., Hi, I'm interested in your services." rows={3} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"></textarea>
                     </div>
                     <div>
-                      <button
-                        type="submit"
-                        className="w-full bg-furi-red text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
-                      >
+                      <button type="submit" className="w-full bg-furi-red text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">
                         Generate Link
                       </button>
                     </div>
                   </form>
                   
-                  {whatsappLink && (
-                    <div className="mt-8 p-4 bg-white border border-gray-200 rounded-md">
+                  {whatsappLink && <div className="mt-8 p-4 bg-white border border-gray-200 rounded-md">
                       <div className="flex justify-between items-center">
                         <h3 className="font-bold">Your WhatsApp Link:</h3>
-                        <button
-                          onClick={() => copyToClipboard(whatsappLink, "WhatsApp link copied to clipboard!")}
-                          className="text-furi-red hover:text-opacity-80 transition-colors"
-                        >
+                        <button onClick={() => copyToClipboard(whatsappLink, "WhatsApp link copied to clipboard!")} className="text-furi-red hover:text-opacity-80 transition-colors">
                           <Copy size={18} />
                         </button>
                       </div>
-                      <a
-                        href={whatsappLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block mt-2 text-blue-600 hover:underline break-all"
-                      >
+                      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block mt-2 text-blue-600 hover:underline break-all">
                         {whatsappLink}
                       </a>
                       <div className="mt-4">
-                        <button
-                          onClick={() => window.open(whatsappLink, "_blank")}
-                          className="w-full bg-green-500 text-white px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all"
-                        >
+                        <button onClick={() => window.open(whatsappLink, "_blank")} className="w-full bg-green-500 text-white px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all">
                           Test Link
                         </button>
                       </div>
-                    </div>
-                  )}
+                    </div>}
                 </div>
-              </AnimatedElement>
-            )}
+              </AnimatedElement>}
             
             {/* Google Reviews QR Code Generator */}
-            {activeTab === "reviews" && (
-              <AnimatedElement animation="fade-in">
+            {activeTab === "reviews" && <AnimatedElement animation="fade-in">
                 <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
                   <h2 className="text-2xl font-bold mb-6">Google Reviews QR Code Generator</h2>
                   <p className="text-gray-600 mb-8">
@@ -197,61 +140,37 @@ const Tools = () => {
                       <label htmlFor="place-id" className="block text-sm font-medium text-gray-700 mb-1">
                         Google Place ID
                       </label>
-                      <input
-                        type="text"
-                        id="place-id"
-                        value={placeId}
-                        onChange={(e) => setPlaceId(e.target.value)}
-                        placeholder="e.g., ChIJN1t_tDeuEmsRUsoyG83frY4"
-                        required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                      />
+                      <input type="text" id="place-id" value={placeId} onChange={e => setPlaceId(e.target.value)} placeholder="e.g., ChIJN1t_tDeuEmsRUsoyG83frY4" required className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                       <p className="mt-1 text-sm text-gray-500">
                         Don't know your Place ID?{" "}
-                        <a
-                          href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-furi-red hover:underline"
-                        >
+                        <a href="https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder" target="_blank" rel="noopener noreferrer" className="text-furi-red hover:underline">
                           Find it here
                         </a>
                       </p>
                     </div>
                     <div>
-                      <button
-                        type="submit"
-                        className="w-full bg-furi-red text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
-                      >
+                      <button type="submit" className="w-full bg-furi-red text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">
                         Generate QR Code
                       </button>
                     </div>
                   </form>
                   
-                  {qrCodeUrl && (
-                    <div className="mt-8 p-4 bg-white border border-gray-200 rounded-md text-center">
+                  {qrCodeUrl && <div className="mt-8 p-4 bg-white border border-gray-200 rounded-md text-center">
                       <h3 className="font-bold mb-4">Your Google Reviews QR Code:</h3>
                       <div className="flex justify-center mb-4">
                         <img src={qrCodeUrl} alt="Google Reviews QR Code" className="w-48 h-48" />
                       </div>
                       <div className="flex justify-center">
-                        <a
-                          href={qrCodeUrl}
-                          download="google-review-qr-code.png"
-                          className="inline-flex items-center bg-furi-red text-white px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all"
-                        >
+                        <a href={qrCodeUrl} download="google-review-qr-code.png" className="inline-flex items-center bg-furi-red text-white px-4 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all">
                           <Download size={18} className="mr-2" /> Download QR Code
                         </a>
                       </div>
-                    </div>
-                  )}
+                    </div>}
                 </div>
-              </AnimatedElement>
-            )}
+              </AnimatedElement>}
             
             {/* Email Signature Generator */}
-            {activeTab === "email" && (
-              <AnimatedElement animation="fade-in">
+            {activeTab === "email" && <AnimatedElement animation="fade-in">
                 <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
                   <h2 className="text-2xl font-bold mb-6">Email Signature Generator</h2>
                   <p className="text-gray-600 mb-8">
@@ -264,27 +183,13 @@ const Tools = () => {
                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                           Full Name
                         </label>
-                        <input
-                          type="text"
-                          id="name"
-                          value={name}
-                          onChange={(e) => setName(e.target.value)}
-                          placeholder="e.g., John Doe"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                        />
+                        <input type="text" id="name" value={name} onChange={e => setName(e.target.value)} placeholder="e.g., John Doe" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                       </div>
                       <div>
                         <label htmlFor="position" className="block text-sm font-medium text-gray-700 mb-1">
                           Position
                         </label>
-                        <input
-                          type="text"
-                          id="position"
-                          value={position}
-                          onChange={(e) => setPosition(e.target.value)}
-                          placeholder="e.g., Marketing Director"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                        />
+                        <input type="text" id="position" value={position} onChange={e => setPosition(e.target.value)} placeholder="e.g., Marketing Director" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -292,27 +197,13 @@ const Tools = () => {
                         <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
                           Company
                         </label>
-                        <input
-                          type="text"
-                          id="company"
-                          value={company}
-                          onChange={(e) => setCompany(e.target.value)}
-                          placeholder="e.g., FURI"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                        />
+                        <input type="text" id="company" value={company} onChange={e => setCompany(e.target.value)} placeholder="e.g., FURI" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                           Email
                         </label>
-                        <input
-                          type="email"
-                          id="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="e.g., john@furiglobal.in"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                        />
+                        <input type="email" id="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="e.g., john@furiglobal.in" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -320,27 +211,13 @@ const Tools = () => {
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
                           Phone
                         </label>
-                        <input
-                          type="text"
-                          id="phone"
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          placeholder="e.g., +91 98765 43210"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                        />
+                        <input type="text" id="phone" value={phone} onChange={e => setPhone(e.target.value)} placeholder="e.g., +91 98765 43210" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                       </div>
                       <div>
                         <label htmlFor="website" className="block text-sm font-medium text-gray-700 mb-1">
                           Website
                         </label>
-                        <input
-                          type="text"
-                          id="website"
-                          value={website}
-                          onChange={(e) => setWebsite(e.target.value)}
-                          placeholder="e.g., furiglobal.in"
-                          className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
-                        />
+                        <input type="text" id="website" value={website} onChange={e => setWebsite(e.target.value)} placeholder="e.g., furiglobal.in" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                       </div>
                     </div>
                   </form>
@@ -348,54 +225,59 @@ const Tools = () => {
                   <div className="mt-8 p-6 bg-white border border-gray-200 rounded-md">
                     <h3 className="font-bold mb-4">Preview:</h3>
                     <div className="border-t border-gray-200 pt-4">
-                      <table cellPadding="0" cellSpacing="0" style={{ fontFamily: "Arial, sans-serif" }}>
+                      <table cellPadding="0" cellSpacing="0" style={{
+                    fontFamily: "Arial, sans-serif"
+                  }}>
                         <tbody>
                           <tr>
-                            <td valign="top" style={{ paddingRight: "15px" }}>
-                              <img
-                                src="/lovable-uploads/4e7a23d4-8857-45ab-bd5f-4232e1a0f44a.png"
-                                alt="FURI Logo"
-                                width="80"
-                                style={{ display: "block" }}
-                              />
+                            <td valign="top" style={{
+                          paddingRight: "15px"
+                        }}>
+                              <img src="/lovable-uploads/4e7a23d4-8857-45ab-bd5f-4232e1a0f44a.png" alt="FURI Logo" width="80" style={{
+                            display: "block"
+                          }} />
                             </td>
-                            <td
-                              style={{
-                                borderLeft: "2px solid #C00404",
-                                paddingLeft: "15px",
-                                color: "#333333",
-                              }}
-                            >
-                              <div style={{ fontWeight: "bold", fontSize: "16px", color: "#000000" }}>
+                            <td style={{
+                          borderLeft: "2px solid #C00404",
+                          paddingLeft: "15px",
+                          color: "#333333"
+                        }}>
+                              <div style={{
+                            fontWeight: "bold",
+                            fontSize: "16px",
+                            color: "#000000"
+                          }}>
                                 {name || "Your Name"}
                               </div>
-                              <div style={{ fontSize: "14px", color: "#C00404" }}>
+                              <div style={{
+                            fontSize: "14px",
+                            color: "#C00404"
+                          }}>
                                 {position || "Your Position"} | {company}
                               </div>
-                              <div style={{ fontSize: "13px", marginTop: "5px" }}>
-                                {email && (
-                                  <div>
+                              <div style={{
+                            fontSize: "13px",
+                            marginTop: "5px"
+                          }}>
+                                {email && <div>
                                     Email:{" "}
-                                    <a
-                                      href={`mailto:${email}`}
-                                      style={{ color: "#1a73e8", textDecoration: "none" }}
-                                    >
+                                    <a href={`mailto:${email}`} style={{
+                                color: "#1a73e8",
+                                textDecoration: "none"
+                              }}>
                                       {email}
                                     </a>
-                                  </div>
-                                )}
+                                  </div>}
                                 {phone && <div>Phone: {phone}</div>}
-                                {website && (
-                                  <div>
+                                {website && <div>
                                     Web:{" "}
-                                    <a
-                                      href={`https://${website}`}
-                                      style={{ color: "#1a73e8", textDecoration: "none" }}
-                                    >
+                                    <a href={`https://${website}`} style={{
+                                color: "#1a73e8",
+                                textDecoration: "none"
+                              }}>
                                       {website}
                                     </a>
-                                  </div>
-                                )}
+                                  </div>}
                               </div>
                             </td>
                           </tr>
@@ -403,23 +285,19 @@ const Tools = () => {
                       </table>
                     </div>
                     <div className="mt-4 text-center">
-                      <button
-                        onClick={() => {
-                          const signature = document.querySelector(".border-t") as HTMLElement;
-                          if (signature) {
-                            const signatureHTML = signature.innerHTML;
-                            copyToClipboard(signatureHTML, "Email signature copied to clipboard! Paste it into your email client's signature settings.");
-                          }
-                        }}
-                        className="bg-furi-red text-white px-6 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all"
-                      >
+                      <button onClick={() => {
+                    const signature = document.querySelector(".border-t") as HTMLElement;
+                    if (signature) {
+                      const signatureHTML = signature.innerHTML;
+                      copyToClipboard(signatureHTML, "Email signature copied to clipboard! Paste it into your email client's signature settings.");
+                    }
+                  }} className="bg-furi-red text-white px-6 py-2 rounded-md font-medium hover:bg-opacity-90 transition-all">
                         Copy Signature HTML
                       </button>
                     </div>
                   </div>
                 </div>
-              </AnimatedElement>
-            )}
+              </AnimatedElement>}
           </div>
         </div>
       </section>
@@ -433,18 +311,11 @@ const Tools = () => {
               <p className="text-gray-600 mb-8">
                 These free tools are just the beginning. Explore our SmartCampaigns™ platform for AI-powered marketing automation and campaign orchestration.
               </p>
-              <Link
-                to="/services#smart-campaigns"
-                className="inline-block bg-furi-red text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
-              >
-                Explore SmartCampaigns™
-              </Link>
+              <Link to="/services#smart-campaigns" className="inline-block bg-furi-red text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">Explore SmartCampaigns</Link>
             </div>
           </AnimatedElement>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Tools;
