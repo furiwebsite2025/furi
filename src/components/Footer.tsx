@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -22,9 +22,6 @@ const Footer = () => {
             </a>
             <a href="https://www.instagram.com/furishorts" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-furi-red transition-colors">
               <Instagram size={18} />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-furi-red transition-colors">
-              <Facebook size={18} />
             </a>
           </div>
           

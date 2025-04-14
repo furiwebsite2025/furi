@@ -1,13 +1,10 @@
-
 import { useEffect } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 
 const Contact = () => {
-  // Load Fillout form when component mounts
   useEffect(() => {
-    // Make sure any existing script is removed
     const existingScript = document.querySelector('script[src="https://server.fillout.com/embed/v1/"]');
     if (!existingScript) {
       const script = document.createElement("script");
@@ -16,7 +13,6 @@ const Contact = () => {
       document.body.appendChild(script);
     }
     
-    // Clean up on component unmount
     return () => {
       const script = document.querySelector('script[src="https://server.fillout.com/embed/v1/"]');
       if (script && script.parentNode) {
@@ -27,7 +23,6 @@ const Contact = () => {
 
   return (
     <div className="pt-28">
-      {/* Contact Header */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6">
           <AnimatedElement animation="fade-in">
@@ -39,7 +34,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Info and Fillout Form */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
@@ -62,7 +56,7 @@ const Contact = () => {
                     <Phone className="text-furi-red mr-4 flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold mb-1">Call Us</h3>
-                      <p className="text-gray-600">+91 98765 43210</p>
+                      <p className="text-gray-600">+91 7416992299</p>
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -70,9 +64,11 @@ const Contact = () => {
                     <div>
                       <h3 className="font-bold mb-1">Visit Us</h3>
                       <p className="text-gray-600">
-                        123 Innovation Way, <br />
-                        Tech District, <br />
-                        Mumbai, India
+                        TPT Colony, <br />
+                        Balayya Sastri Layout, <br />
+                        Seethammadara, <br />
+                        Visakhapatnam, <br />
+                        Andhra Pradesh 530013
                       </p>
                     </div>
                   </div>
