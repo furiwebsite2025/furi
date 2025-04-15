@@ -69,9 +69,7 @@ const About = () => {
               <p className="text-lg text-gray-600 mb-6">
                 FURI was born from a simple but powerful idea: to combine the analytical power of artificial intelligence with the emotional intelligence of human creativity.
               </p>
-              <p className="text-lg text-gray-600 mb-6">
-                Founded in 2023, we set out to create a new kind of digital marketing agency—one that leverages cutting-edge technology to create campaigns that don't just reach audiences but resonate with them on a deeper level.
-              </p>
+              <p className="text-lg text-gray-600 mb-6">Founded in 2016, we set out to create a new kind of digital marketing agency—one that leverages cutting-edge technology to create campaigns that don't just reach audiences but resonate with them on a deeper level.</p>
               <p className="text-lg text-gray-600">
                 Today, we're proud to work with clients across diverse industries, helping them navigate the ever-changing digital landscape and achieve meaningful results that drive business growth.
               </p>
