@@ -27,7 +27,7 @@ const Privacy = () => {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6 md:px-8 max-w-4xl">
           <AnimatedElement animation="fade-in" delay={0.1}>
-            <div className="prose prose-lg max-w-none text-black">
+            <div className="prose prose-lg max-w-none text-gray-900">
               <p className="mb-8">
                 This Privacy Notice for Furi Media Services ('we', 'us', or 'our'), describes how and why we might collect, store, use, and/or share ('process') your personal information when you use our services ('Services'), including when you:
               </p>
