@@ -1,4 +1,3 @@
-
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import CallToAction from "@/components/CallToAction";
@@ -30,7 +29,7 @@ const Impact = () => {
         "47% reduction in customer acquisition cost",
         "93% increase in returning customers"
       ],
-      image: "https://images.unsplash.com/photo-1581091226063-a5e2589e544e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      image: "/lovable-uploads/7dae6233-9d9e-4868-8588-71b3f650ac06.png"
     },
     {
       id: "saas-leads",
