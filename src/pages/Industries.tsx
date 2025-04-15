@@ -1,4 +1,3 @@
-
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
@@ -23,7 +22,7 @@ const Industries = () => {
       id: "health",
       title: "Health & Wellness",
       description: "Build trust and attract clients through authentic content and targeted marketing campaigns.",
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      image: "/lovable-uploads/d803d1a9-1605-479b-a1d9-6a1083e88edd.png"
     },
     {
       id: "saas",
@@ -35,7 +34,7 @@ const Industries = () => {
       id: "ecommerce",
       title: "E-commerce",
       description: "Drive traffic, increase conversions, and build customer loyalty through effective digital marketing.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      image: "/lovable-uploads/f3662ae2-236d-4b16-b4f5-0cc114a114f7.png"
     },
     {
       id: "realestate",
@@ -47,7 +46,7 @@ const Industries = () => {
       id: "fashion",
       title: "Fashion & Beauty",
       description: "Create aspirational content and drive sales through emotionally resonant marketing campaigns.",
-      image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
+      image: "/lovable-uploads/cbbb5ccd-d655-47e2-bb74-7162d93000a0.png"
     },
     {
       id: "nonprofits",
