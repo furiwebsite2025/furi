@@ -6,27 +6,27 @@ const About = () => {
     name: "Alex Sharma",
     position: "Founder & CEO",
     bio: "Alex founded FURI with a vision to combine AI technology with human creativity to transform digital marketing.",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+    image: "/lovable-uploads/903d3a21-d27e-417c-a46c-dcad2772ab7f.png"
   }, {
     name: "Mia Johnson",
     position: "Creative Director",
     bio: "Mia leads our creative team, ensuring every campaign is visually stunning and emotionally resonant.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+    image: "/lovable-uploads/08ebd681-cd24-49ff-8ff3-15c1da7caa6f.png"
   }, {
     name: "David Chen",
     position: "Head of AI Strategy",
     bio: "David combines his expertise in artificial intelligence with marketing strategy to develop innovative solutions.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+    image: "/lovable-uploads/47a441ac-bbba-49d0-a29e-4fe519329f9b.png"
   }, {
     name: "Priya Patel",
     position: "Client Success Manager",
     bio: "Priya ensures our clients receive exceptional service and achieve their marketing objectives.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+    image: "/lovable-uploads/ad5a2a52-6bef-4be7-951f-1b7cebe9d911.png"
   }, {
     name: "James Wilson",
     position: "Growth Marketing Lead",
     bio: "James specializes in developing data-driven strategies that accelerate business growth.",
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+    image: "/lovable-uploads/cc4f7821-8758-4e29-a990-47f9bd716334.png"
   }, {
     name: "Sophia Rodriguez",
     position: "Content Strategy Director",
@@ -77,7 +77,7 @@ const About = () => {
 
             <AnimatedElement animation="slide-up">
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="FURI Team" className="w-full h-auto" />
+                <img src="/lovable-uploads/903d3a21-d27e-417c-a46c-dcad2772ab7f.png" alt="FURI Team" className="w-full h-auto" />
               </div>
             </AnimatedElement>
           </div>
@@ -186,8 +186,6 @@ const About = () => {
       </section>
 
       {/* Team Section */}
-      
-
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
