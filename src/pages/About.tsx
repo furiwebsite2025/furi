@@ -1,6 +1,8 @@
+import React from 'react';
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import CallToAction from "@/components/CallToAction";
+
 const About = () => {
   const teamMembers = [{
     name: "Alex Sharma",
@@ -50,6 +52,7 @@ const About = () => {
     description: "We work closely with our clients, treating their business goals as our own.",
     icon: "🤝"
   }];
+
   return <div className="pt-28">
       {/* About Header */}
       <section className="py-16 bg-gray-50">
@@ -77,7 +80,7 @@ const About = () => {
 
             <AnimatedElement animation="slide-up">
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img src="/lovable-uploads/903d3a21-d27e-417c-a46c-dcad2772ab7f.png" alt="FURI Team" className="w-full h-auto" />
+                <img src="/lovable-uploads/ourstory.jpg" alt="FURI Team" className="w-full h-auto" />
               </div>
             </AnimatedElement>
           </div>
@@ -134,7 +137,7 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedElement animation="slide-up" className="order-2 lg:order-1">
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Our Approach" className="w-full h-auto" />
+                <img src="/lovable-uploads/hww.jpg" alt="Our Approach" className="w-full h-auto" />
               </div>
             </AnimatedElement>
 
@@ -196,4 +199,5 @@ const About = () => {
       </section>
     </div>;
 };
+
 export default About;
