@@ -15,7 +15,8 @@ const Services = () => {
         "Brand Personality",
         "Identity & Packaging",
         "Brand Guidelines"
-      ]
+      ],
+      image: "/lovable-uploads/branddesign.jpg"
     },
     {
       id: "brand-communication",
@@ -28,7 +29,8 @@ const Services = () => {
         "Influencer Collaborations",
         "Online Reputation Management",
         "WhatsApp Marketing"
-      ]
+      ],
+      image: "/lovable-uploads/brandcom.jpg"
     },
     {
       id: "growth-marketing",
@@ -40,7 +42,8 @@ const Services = () => {
         "SEO",
         "E-commerce Marketing",
         "Ad Campaign Management & Analytics"
-      ]
+      ],
+      image: "/lovable-uploads/growth.jpg"
     },
     {
       id: "video-production",
@@ -129,23 +132,7 @@ const Services = () => {
               >
                 <div className="rounded-lg overflow-hidden shadow-lg">
                   <img
-                    src={
-                      service.id === "video-production"
-                        ? "/lovable-uploads/e68da18f-67f5-408b-b646-9902b01b0bd7.png"
-                        : `https://images.unsplash.com/photo-${
-                            index % 6 === 0
-                              ? "1581091226825-a6a2a5aee158"
-                              : index % 6 === 1
-                              ? "1460925895917-afdab827c52f"
-                              : index % 6 === 2
-                              ? "1498050108023-c5249f4df085"
-                              : index % 6 === 3
-                              ? "1581090464777-f3220bbe1b8b"
-                              : index % 6 === 4
-                              ? "1605810230434-7631ac76ec81"
-                              : "1526374965328-7f61d4dc18c5"
-                          }?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&h=855&q=80`
-                    }
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-auto object-cover"
                   />
