@@ -1,4 +1,3 @@
-
 import React from 'react';
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
@@ -85,14 +84,10 @@ const About = () => {
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <AspectRatio ratio={16/9} className="bg-gray-100">
                   <img 
-                    src="/lovable-uploads/ourstory.jpg" 
-                    alt="FURI Team" 
+                    src="/lovable-uploads/5255dd03-2422-4527-a7d4-1b62f2257659.png"
+                    alt="FURI Team collaborating on a project"
                     className="w-full h-full object-cover"
                     loading="lazy"
-                    onError={(e) => {
-                      console.error("Failed to load Our Story image");
-                      e.currentTarget.src = "/placeholder.svg";
-                    }}
                   />
                 </AspectRatio>
               </div>
@@ -153,14 +148,10 @@ const About = () => {
               <div className="rounded-lg overflow-hidden shadow-lg">
                 <AspectRatio ratio={16/9} className="bg-gray-100">
                   <img 
-                    src="/lovable-uploads/hww.jpg" 
-                    alt="Our Approach" 
-                    className="w-full h-full object-cover" 
+                    src="/lovable-uploads/6b76ff39-d360-4e35-8510-5c0c27048897.png"
+                    alt="Our collaborative work approach"
+                    className="w-full h-full object-cover"
                     loading="lazy"
-                    onError={(e) => {
-                      console.error("Failed to load How We Work image");
-                      e.currentTarget.src = "/placeholder.svg";
-                    }}
                   />
                 </AspectRatio>
               </div>

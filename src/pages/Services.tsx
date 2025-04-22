@@ -1,4 +1,3 @@
-
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import CallToAction from "@/components/CallToAction";
@@ -18,7 +17,7 @@ const Services = () => {
         "Identity & Packaging",
         "Brand Guidelines"
       ],
-      image: "/lovable-uploads/branddesign.jpg"
+      image: "/lovable-uploads/89c8697d-47fa-4b32-9085-33a1a7764cc0.png"
     },
     {
       id: "brand-communication",
@@ -32,7 +31,7 @@ const Services = () => {
         "Online Reputation Management",
         "WhatsApp Marketing"
       ],
-      image: "/lovable-uploads/brandcom.jpg"
+      image: "/lovable-uploads/a58dddeb-4ada-4a79-9bee-aded894e21cf.png"
     },
     {
       id: "growth-marketing",
@@ -45,7 +44,7 @@ const Services = () => {
         "E-commerce Marketing",
         "Ad Campaign Management & Analytics"
       ],
-      image: "/lovable-uploads/growth.jpg"
+      image: "/lovable-uploads/bb0c3df7-4561-4500-9184-27a9f49d1b3d.png"
     },
     {
       id: "video-production",
@@ -57,7 +56,7 @@ const Services = () => {
         "Short-form Content (IG Reels, YouTube Shorts)",
         "Multi-language Podcasts"
       ],
-      image: "/lovable-uploads/d8db1044-d49b-44fa-baa0-426e8fe083b8.png"
+      image: "/lovable-uploads/2042851a-ad27-4357-82bf-a8bbd6c7b754.png"
     },
     {
       id: "creative-technology",
@@ -70,7 +69,7 @@ const Services = () => {
         "Generative AI Campaigns",
         "Web & App Development"
       ],
-      image: "/lovable-uploads/a77bca75-86a6-4c8e-8684-74edb2eb406a.png"
+      image: "/lovable-uploads/f276d028-8aaa-45a2-a6b9-3be5b43d01dc.png"
     },
     {
       id: "smart-campaigns",
@@ -82,7 +81,7 @@ const Services = () => {
         "Predictive performance optimization",
         "Cross-platform campaign orchestration"
       ],
-      image: "/lovable-uploads/769c97b5-99c1-42ef-b30e-c47d2f210ed0.png"
+      image: "/lovable-uploads/4923fc3d-b81b-4399-83a7-ad892f18e5f7.png"
     }
   ];
 
@@ -139,13 +138,9 @@ const Services = () => {
                   <AspectRatio ratio={16/9} className="bg-gray-100">
                     <img
                       src={service.image}
-                      alt={service.title}
+                      alt={`${service.title} illustration`}
                       className="w-full h-full object-cover"
                       loading="lazy"
-                      onError={(e) => {
-                        console.error(`Failed to load image: ${service.image}`);
-                        e.currentTarget.src = "/placeholder.svg";
-                      }}
                     />
                   </AspectRatio>
                 </div>
