@@ -1,7 +1,9 @@
+
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import CallToAction from "@/components/CallToAction";
 import { Check } from "lucide-react";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Services = () => {
   const services = [
@@ -54,7 +56,8 @@ const Services = () => {
         "Brand Films & Explanatory Videos",
         "Short-form Content (IG Reels, YouTube Shorts)",
         "Multi-language Podcasts"
-      ]
+      ],
+      image: "/lovable-uploads/d8db1044-d49b-44fa-baa0-426e8fe083b8.png"
     },
     {
       id: "creative-technology",
@@ -66,7 +69,8 @@ const Services = () => {
         "Conversational AI",
         "Generative AI Campaigns",
         "Web & App Development"
-      ]
+      ],
+      image: "/lovable-uploads/a77bca75-86a6-4c8e-8684-74edb2eb406a.png"
     },
     {
       id: "smart-campaigns",
@@ -77,7 +81,8 @@ const Services = () => {
         "AI-powered targeting & automation",
         "Predictive performance optimization",
         "Cross-platform campaign orchestration"
-      ]
+      ],
+      image: "/lovable-uploads/769c97b5-99c1-42ef-b30e-c47d2f210ed0.png"
     }
   ];
 
@@ -131,11 +136,18 @@ const Services = () => {
                 className={index % 2 === 0 ? "order-2" : "order-2 lg:order-1"}
               >
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-auto object-cover"
-                  />
+                  <AspectRatio ratio={16/9} className="bg-gray-100">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      onError={(e) => {
+                        console.error(`Failed to load image: ${service.image}`);
+                        e.currentTarget.src = "/placeholder.svg";
+                      }}
+                    />
+                  </AspectRatio>
                 </div>
               </AnimatedElement>
             </div>

@@ -1,7 +1,9 @@
+
 import React from 'react';
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import CallToAction from "@/components/CallToAction";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const About = () => {
   const teamMembers = [{
@@ -33,8 +35,9 @@ const About = () => {
     name: "Sophia Rodriguez",
     position: "Content Strategy Director",
     bio: "Sophia crafts compelling narratives that connect brands with their audiences on a deeper level.",
-    image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+    image: "/lovable-uploads/e85c9a0a-a3c0-49d9-be3b-b12272846680.png"
   }];
+  
   const values = [{
     title: "Innovation",
     description: "We constantly explore new technologies and approaches to stay at the forefront of digital marketing.",
@@ -80,7 +83,18 @@ const About = () => {
 
             <AnimatedElement animation="slide-up">
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img src="/lovable-uploads/ourstory.jpg" alt="FURI Team" className="w-full h-auto" />
+                <AspectRatio ratio={16/9} className="bg-gray-100">
+                  <img 
+                    src="/lovable-uploads/ourstory.jpg" 
+                    alt="FURI Team" 
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(e) => {
+                      console.error("Failed to load Our Story image");
+                      e.currentTarget.src = "/placeholder.svg";
+                    }}
+                  />
+                </AspectRatio>
               </div>
             </AnimatedElement>
           </div>
@@ -137,7 +151,18 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedElement animation="slide-up" className="order-2 lg:order-1">
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img src="/lovable-uploads/hww.jpg" alt="Our Approach" className="w-full h-auto" />
+                <AspectRatio ratio={16/9} className="bg-gray-100">
+                  <img 
+                    src="/lovable-uploads/hww.jpg" 
+                    alt="Our Approach" 
+                    className="w-full h-full object-cover" 
+                    loading="lazy"
+                    onError={(e) => {
+                      console.error("Failed to load How We Work image");
+                      e.currentTarget.src = "/placeholder.svg";
+                    }}
+                  />
+                </AspectRatio>
               </div>
             </AnimatedElement>
 
@@ -188,7 +213,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-6">
