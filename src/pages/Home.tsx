@@ -145,7 +145,7 @@ const Home = () => {
             <div className="lg:w-1/2">
               <AnimatedElement animation="slide-up">
                 <div className="rounded-lg overflow-hidden shadow-xl">
-                  <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="SmartCampaigns Dashboard" className="w-full h-auto" />
+                  <img alt="SmartCampaigns Dashboard" className="w-full h-auto" src="/lovable-uploads/193df489-968c-4f5e-9695-d31f3575c43c.jpg" />
                 </div>
               </AnimatedElement>
             </div>
