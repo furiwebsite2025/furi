@@ -1,10 +1,8 @@
-
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import CallToAction from "@/components/CallToAction";
-
 const Industries = () => {
   const industries = [{
     id: "hospitality",
@@ -52,11 +50,10 @@ const Industries = () => {
     description: "Build trust and showcase your logistical expertise through targeted digital marketing strategies.",
     image: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80"
   }];
-  
-  return <div className="pt-20 sm:pt-24 md:pt-28">
+  return <div className="pt-28">
       {/* Industries Header */}
-      <section className="py-10 sm:py-12 md:py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6">
           <AnimatedElement animation="fade-in">
             <SectionHeading title="Industries We Serve" subtitle="Tailored marketing solutions for diverse sectors, each with unique challenges and opportunities" />
           </AnimatedElement>
@@ -64,30 +61,21 @@ const Industries = () => {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => <AnimatedElement key={industry.id} animation="slide-up" delay={index * 100}>
                 <div className="bg-gray-50 rounded-lg overflow-hidden shadow-sm hover-scale h-full flex flex-col">
-                  <div className="h-36 sm:h-48 overflow-hidden">
-                    <img 
-                      src={industry.image} 
-                      alt={industry.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-                      loading="lazy"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80";
-                      }}
-                    />
+                  <div className="h-48 overflow-hidden">
+                    <img src={industry.image} alt={industry.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
                   </div>
-                  <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3">{industry.title}</h3>
-                    <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 flex-grow">
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-bold mb-3">{industry.title}</h3>
+                    <p className="text-gray-600 mb-6 flex-grow">
                       {industry.description}
                     </p>
-                    <Link to="/contact" className="inline-flex items-center text-furi-red font-medium hover:underline text-sm sm:text-base">
-                      Discuss your project <ArrowRight size={16} className="ml-1 sm:ml-2" />
+                    <Link to="/contact" className="inline-flex items-center text-furi-red font-medium hover:underline">
+                      Discuss your project <ArrowRight size={16} className="ml-2" />
                     </Link>
                   </div>
                 </div>
@@ -97,30 +85,25 @@ const Industries = () => {
       </section>
 
       {/* Industry Approach */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedElement animation="fade-in">
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Our Industry Approach</h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
+              <h2 className="text-3xl font-bold mb-6">Our Industry Approach</h2>
+              <p className="text-lg text-gray-600 mb-6">
                 At FURI, we understand that each industry has its unique challenges and opportunities. That's why we take a tailored approach to every client we work with.
               </p>
-              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
+              <p className="text-lg text-gray-600 mb-6">
                 Our team combines industry expertise with AI-powered insights to create marketing strategies that resonate with your specific audience and drive meaningful results for your business.
               </p>
-              <p className="text-base sm:text-lg text-gray-600">
+              <p className="text-lg text-gray-600">
                 Whether you're in hospitality, education, health & wellness, or any other sector, we have the experience and tools to help you achieve your marketing goals.
               </p>
             </AnimatedElement>
 
             <AnimatedElement animation="slide-up">
               <div className="rounded-lg overflow-hidden shadow-lg">
-                <img 
-                  alt="Industry Approach" 
-                  className="w-full h-auto" 
-                  src="/lovable-uploads/1bb6c47b-35b9-4ef8-bc5f-9a3a55fca85f.jpg"
-                  loading="lazy"
-                />
+                <img alt="Industry Approach" className="w-full h-auto" src="/lovable-uploads/1bb6c47b-35b9-4ef8-bc5f-9a3a55fca85f.jpg" />
               </div>
             </AnimatedElement>
           </div>
@@ -128,8 +111,8 @@ const Industries = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-6">
           <AnimatedElement animation="fade-in">
             <CallToAction title="Ready to Transform Your Industry Presence?" description="Let's collaborate to create marketing strategies tailored to your industry-specific needs." buttonText="Get in Touch" buttonLink="/contact" className="neumorphic" />
           </AnimatedElement>
@@ -137,5 +120,4 @@ const Industries = () => {
       </section>
     </div>;
 };
-
 export default Industries;
