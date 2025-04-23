@@ -1,14 +1,14 @@
 
+import React from "react";
 import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 interface CallToActionProps {
   title: string;
-  description?: string;
+  description: string;
   buttonText: string;
   buttonLink: string;
   className?: string;
-  variant?: "light" | "dark";
 }
 
 const CallToAction = ({
@@ -17,35 +17,16 @@ const CallToAction = ({
   buttonText,
   buttonLink,
   className,
-  variant = "light",
 }: CallToActionProps) => {
   return (
-    <div
-      className={cn(
-        "py-16 px-6 md:py-20 rounded-lg text-center",
-        variant === "light" ? "bg-white" : "bg-gray-900 text-white",
-        className
-      )}
-    >
-      <h3 className="text-2xl md:text-3xl font-bold mb-4">{title}</h3>
-      {description && (
-        <p
-          className={cn(
-            "mb-8 max-w-2xl mx-auto",
-            variant === "light" ? "text-gray-600" : "text-gray-300"
-          )}
-        >
-          {description}
-        </p>
-      )}
+    <div className={cn("bg-white rounded-lg p-6 sm:p-8 md:p-12 text-center", className)}>
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">{title}</h2>
+      <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto mb-6 sm:mb-8">
+        {description}
+      </p>
       <Link
         to={buttonLink}
-        className={cn(
-          "inline-block px-8 py-3 rounded-md font-medium transition-all",
-          variant === "light"
-            ? "bg-furi-red text-white hover:bg-opacity-90"
-            : "bg-white text-gray-900 hover:bg-gray-100"
-        )}
+        className="inline-block bg-furi-red text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-medium text-sm sm:text-base hover:bg-opacity-90 transition-all hover:shadow-md"
       >
         {buttonText}
       </Link>
