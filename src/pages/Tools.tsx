@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Copy, Download, QrCode } from "lucide-react";
+import { Copy, Download, QrCode, Upload } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import { useToast } from "@/hooks/use-toast";
+
 const Tools = () => {
   const {
     toast
@@ -26,6 +27,9 @@ const Tools = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [website, setWebsite] = useState("furiglobal.in");
+  const [logoImage, setLogoImage] = useState<string | null>(null);
+  const logoInputRef = useRef<HTMLInputElement>(null);
+
   const handleWhatsappGenerate = (e: React.FormEvent) => {
     e.preventDefault();
     const formattedNumber = whatsappNumber.replace(/[^0-9]/g, "");
@@ -33,6 +37,7 @@ const Tools = () => {
     const link = `https://wa.me/${formattedNumber}${encodedMessage ? `?text=${encodedMessage}` : ""}`;
     setWhatsappLink(link);
   };
+
   const handleQrCodeGenerate = (e: React.FormEvent) => {
     e.preventDefault();
     if (placeId) {
@@ -40,6 +45,20 @@ const Tools = () => {
       setQrCodeUrl(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(reviewUrl)}`);
     }
   };
+
+  const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        if (event.target?.result) {
+          setLogoImage(event.target.result as string);
+        }
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
   const copyToClipboard = (text: string, message: string) => {
     navigator.clipboard.writeText(text).then(() => {
       toast({
@@ -49,6 +68,7 @@ const Tools = () => {
       });
     });
   };
+
   return <div className="pt-28">
       {/* Tools Header */}
       <section className="py-16 bg-gray-50">
@@ -81,7 +101,8 @@ const Tools = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             {/* WhatsApp Chat Link Generator */}
-            {activeTab === "whatsapp" && <AnimatedElement animation="fade-in">
+            {activeTab === "whatsapp" && 
+              <AnimatedElement animation="fade-in">
                 <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
                   <h2 className="text-2xl font-bold mb-6">WhatsApp Chat Link Generator</h2>
                   <p className="text-gray-600 mb-8">
@@ -128,7 +149,8 @@ const Tools = () => {
               </AnimatedElement>}
             
             {/* Google Reviews QR Code Generator */}
-            {activeTab === "reviews" && <AnimatedElement animation="fade-in">
+            {activeTab === "reviews" && 
+              <AnimatedElement animation="fade-in">
                 <div className="bg-gray-50 rounded-lg p-8 shadow-sm">
                   <h2 className="text-2xl font-bold mb-6">Google Reviews QR Code Generator</h2>
                   <p className="text-gray-600 mb-8">
@@ -220,6 +242,45 @@ const Tools = () => {
                         <input type="text" id="website" value={website} onChange={e => setWebsite(e.target.value)} placeholder="e.g., furiglobal.in" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent" />
                       </div>
                     </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Company Logo
+                      </label>
+                      <div className="flex items-center">
+                        <input 
+                          type="file" 
+                          accept="image/png, image/jpeg" 
+                          className="hidden" 
+                          ref={logoInputRef}
+                          onChange={handleLogoUpload}
+                        />
+                        <button 
+                          type="button" 
+                          onClick={() => logoInputRef.current?.click()}
+                          className="flex items-center gap-2 bg-white border border-gray-300 rounded-md px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-furi-red focus:border-transparent"
+                        >
+                          <Upload size={16} />
+                          Upload Logo
+                        </button>
+                        {logoImage && (
+                          <div className="ml-4 flex items-center">
+                            <img 
+                              src={logoImage} 
+                              alt="Company logo" 
+                              className="h-10 w-auto object-contain"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => setLogoImage(null)}
+                              className="ml-2 text-gray-400 hover:text-gray-500"
+                            >
+                              Remove
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                      <p className="mt-1 text-xs text-gray-500">Recommended: PNG format with transparent background</p>
+                    </div>
                   </form>
                   
                   <div className="mt-8 p-6 bg-white border border-gray-200 rounded-md">
@@ -233,9 +294,15 @@ const Tools = () => {
                             <td valign="top" style={{
                           paddingRight: "15px"
                         }}>
-                              <img src="/lovable-uploads/4e7a23d4-8857-45ab-bd5f-4232e1a0f44a.png" alt="FURI Logo" width="80" style={{
-                            display: "block"
-                          }} />
+                              {logoImage ? (
+                                <img src={logoImage} alt="Company Logo" width="80" style={{
+                              display: "block"
+                            }} />
+                              ) : (
+                                <div className="w-20 h-20 bg-gray-100 flex items-center justify-center text-gray-400 text-xs">
+                                  No logo
+                                </div>
+                              )}
                             </td>
                             <td style={{
                           borderLeft: "2px solid #C00404",
@@ -316,4 +383,5 @@ const Tools = () => {
       </section>
     </div>;
 };
+
 export default Tools;

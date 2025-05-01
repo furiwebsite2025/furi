@@ -3,6 +3,7 @@ import { ArrowRight, Check } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
 import AnimatedElement from "@/components/AnimatedElement";
+
 const Home = () => {
   const servicesData = [{
     title: "Brand Strategy & Design",
@@ -40,17 +41,17 @@ const Home = () => {
     quote: "FURI transformed our digital presence with their AI-powered approach. The results speak for themselves - 40% increase in qualified leads!",
     author: "Sarah Johnson",
     position: "Marketing Director, TechSolutions Inc.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+    image: "/lovable-uploads/cbbb5ccd-d655-47e2-bb74-7162d93000a0.png"
   }, {
     quote: "The team at FURI doesn't just execute marketing campaigns - they create data-intelligent strategies that deliver real business results.",
     author: "Michael Chen",
     position: "CEO, Horizon Hospitality",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+    image: "/lovable-uploads/cbbb5ccd-d655-47e2-bb74-7162d93000a0.png"
   }, {
     quote: "Working with FURI has been transformative for our brand. Their emotionally intelligent approach helped us connect with our audience in ways we never imagined possible.",
     author: "Priya Sharma",
     position: "Founder, Wellness Collective",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+    image: "/lovable-uploads/cbbb5ccd-d655-47e2-bb74-7162d93000a0.png"
   }];
   return <div className="pt-20">
       {/* Hero Section */}

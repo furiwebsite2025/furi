@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import WhatsAppButton from "./WhatsAppButton";
 
 const Layout = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -28,6 +29,7 @@ const Layout = () => {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
