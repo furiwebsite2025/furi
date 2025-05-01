@@ -3,7 +3,6 @@ import { ArrowRight, Check } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
 import AnimatedElement from "@/components/AnimatedElement";
-
 const Home = () => {
   const servicesData = [{
     title: "Brand Strategy & Design",
@@ -167,7 +166,7 @@ const Home = () => {
                   <div className="text-2xl text-gray-400 mb-4">"</div>
                   <p className="text-gray-700 mb-6 flex-grow">{testimonial.quote}</p>
                   <div className="flex items-center">
-                    <img src={testimonial.image} alt={testimonial.author} className="w-12 h-12 rounded-full mr-4" />
+                    
                     <div>
                       <h4 className="font-bold">{testimonial.author}</h4>
                       <p className="text-sm text-gray-600">{testimonial.position}</p>
