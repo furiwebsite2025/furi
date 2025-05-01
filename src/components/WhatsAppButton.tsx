@@ -1,5 +1,5 @@
 
-import { WhatsApp } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface WhatsAppButtonProps {
@@ -18,7 +18,7 @@ const WhatsAppButton = ({ className }: WhatsAppButtonProps) => {
       )}
       aria-label="Contact us on WhatsApp"
     >
-      <WhatsApp className="text-white w-7 h-7 md:w-8 md:h-8" />
+      <MessageCircle className="text-white w-7 h-7 md:w-8 md:h-8" />
     </a>
   );
 };
