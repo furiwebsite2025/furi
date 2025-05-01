@@ -52,42 +52,42 @@ const Impact = () => {
       author: "Sarah Johnson",
       position: "Marketing Director, TechSolutions Inc.",
       stars: 5,
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
     },
     {
       quote: "The team at FURI doesn't just execute marketing campaigns - they create data-intelligent strategies that deliver real business results.",
       author: "Michael Chen",
       position: "CEO, Horizon Hospitality",
       stars: 5,
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
     },
     {
       quote: "Working with FURI has been transformative for our brand. Their emotionally intelligent approach helped us connect with our audience in ways we never imagined possible.",
       author: "Priya Sharma",
       position: "Founder, Wellness Collective",
       stars: 5,
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
     },
     {
       quote: "FURI's WhatsApp marketing strategy doubled our customer engagement and increased conversions by 35%. Their approach is truly innovative.",
       author: "David Rodriguez",
       position: "Marketing Manager, Global Eats",
       stars: 5,
-      image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
     },
     {
       quote: "The SmartCampaigns platform by FURI revolutionized our approach to digital marketing. We're now getting better results with half the effort.",
       author: "Lisa Patel",
       position: "Digital Director, NextGen Solutions",
       stars: 5,
-      image: "https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
     },
     {
       quote: "FURI's video production team created content that perfectly captured our brand essence. The engagement metrics speak for themselves!",
       author: "Thomas Wright",
       position: "Chief Brand Officer, Urban Styles",
       stars: 5,
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80"
+      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
     }
   ];
 
