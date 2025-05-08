@@ -1,7 +1,10 @@
+
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedElement from "@/components/AnimatedElement";
 import CallToAction from "@/components/CallToAction";
-import { ArrowRight, Star } from "lucide-react";
+import CaseStudiesSection from "@/components/impact/CaseStudiesSection";
+import TestimonialsSection from "@/components/impact/TestimonialsSection";
+import MetricsSection from "@/components/impact/MetricsSection";
 
 const Impact = () => {
   const caseStudies = [
@@ -52,42 +55,42 @@ const Impact = () => {
       author: "Sarah Johnson",
       position: "Marketing Director, TechSolutions Inc.",
       stars: 5,
-      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
+      image: "/lovable-uploads/review.png"
     },
     {
       quote: "The team at FURI doesn't just execute marketing campaigns - they create data-intelligent strategies that deliver real business results.",
       author: "Michael Chen",
       position: "CEO, Horizon Hospitality",
       stars: 5,
-      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
+      image: "/lovable-uploads/review.png"
     },
     {
       quote: "Working with FURI has been transformative for our brand. Their emotionally intelligent approach helped us connect with our audience in ways we never imagined possible.",
       author: "Priya Sharma",
       position: "Founder, Wellness Collective",
       stars: 5,
-      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
+      image: "/lovable-uploads/review.png"
     },
     {
       quote: "FURI's WhatsApp marketing strategy doubled our customer engagement and increased conversions by 35%. Their approach is truly innovative.",
       author: "David Rodriguez",
       position: "Marketing Manager, Global Eats",
       stars: 5,
-      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
+      image: "/lovable-uploads/review.png"
     },
     {
       quote: "The SmartCampaigns platform by FURI revolutionized our approach to digital marketing. We're now getting better results with half the effort.",
       author: "Lisa Patel",
       position: "Digital Director, NextGen Solutions",
       stars: 5,
-      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
+      image: "/lovable-uploads/review.png"
     },
     {
       quote: "FURI's video production team created content that perfectly captured our brand essence. The engagement metrics speak for themselves!",
       author: "Thomas Wright",
       position: "Chief Brand Officer, Urban Styles",
       stars: 5,
-      image: "/lovable-uploads/06e27040-9ab9-4857-90ef-bc10e6e1bda4.png"
+      image: "/lovable-uploads/review.png"
     }
   ];
 
@@ -125,125 +128,13 @@ const Impact = () => {
       </section>
 
       {/* Metrics Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {metrics.map((metric, index) => (
-              <AnimatedElement
-                key={index}
-                animation="scale-in"
-                delay={index * 100}
-              >
-                <div className="text-center p-6 neumorphic h-full">
-                  <div className="text-4xl md:text-5xl font-bold text-furi-red mb-2">
-                    {metric.value}
-                  </div>
-                  <div className="text-gray-600">{metric.label}</div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
+      <MetricsSection metrics={metrics} />
 
       {/* Case Studies */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-6">
-          <AnimatedElement animation="fade-in">
-            <SectionHeading
-              title="Case Studies"
-              subtitle="Explore how we've helped businesses across industries achieve their marketing goals"
-            />
-          </AnimatedElement>
-
-          <div className="space-y-16">
-            {caseStudies.map((study, index) => (
-              <AnimatedElement
-                key={study.id}
-                animation="fade-in"
-                delay={index * 150}
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white rounded-lg shadow-sm overflow-hidden">
-                  <div className={`h-64 lg:h-full ${index % 2 === 1 ? "order-1 lg:order-2" : ""}`}>
-                    <img
-                      src={study.image}
-                      alt={study.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className={`p-8 ${index % 2 === 1 ? "order-2 lg:order-1" : ""}`}>
-                    <div className="text-sm font-medium text-furi-red mb-2">
-                      {study.industry}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4">{study.title}</h3>
-                    <div className="mb-4">
-                      <h4 className="font-medium mb-1">Challenge:</h4>
-                      <p className="text-gray-600">{study.challenge}</p>
-                    </div>
-                    <div className="mb-4">
-                      <h4 className="font-medium mb-1">Solution:</h4>
-                      <p className="text-gray-600">{study.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-medium mb-1">Results:</h4>
-                      <ul className="text-gray-600 space-y-1">
-                        {study.results.map((result, i) => (
-                          <li key={i} className="flex items-start">
-                            <ArrowRight size={16} className="text-furi-red mr-2 mt-1 flex-shrink-0" />
-                            <span>{result}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
+      <CaseStudiesSection caseStudies={caseStudies} />
 
       {/* Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <AnimatedElement animation="fade-in">
-            <SectionHeading
-              title="Client Testimonials"
-              subtitle="Hear what our clients have to say about working with FURI"
-            />
-          </AnimatedElement>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <AnimatedElement
-                key={index}
-                animation="slide-up"
-                delay={index * 100}
-              >
-                <div className="bg-gray-50 rounded-lg p-8 neumorphic h-full flex flex-col">
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.stars)].map((_, i) => (
-                      <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-6 flex-grow">"{testimonial.quote}"</p>
-                  <div className="flex items-center">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.author}
-                      className="w-12 h-12 rounded-full mr-4"
-                    />
-                    <div>
-                      <h4 className="font-bold">{testimonial.author}</h4>
-                      <p className="text-sm text-gray-600">{testimonial.position}</p>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedElement>
-            ))}
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection testimonials={testimonials} />
 
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">
