@@ -87,7 +87,7 @@
   /* Grid pattern background */
   .bg-pattern {
     position: relative;
-    background-color: #FFFFFF;
+    background-color: #1A1A1A;
   }
 
   .bg-pattern::before {
@@ -100,8 +100,8 @@
     width: 100%;
     height: 100%;
     background-image: 
-      linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+      linear-gradient(to right, rgba(60, 60, 60, 0.2) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(60, 60, 60, 0.2) 1px, transparent 1px);
     background-size: 20px 20px;
     pointer-events: none;
     z-index: -1;

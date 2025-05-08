@@ -23,7 +23,7 @@ const Layout = () => {
   }, [location.pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-pattern">
+    <div className="flex flex-col min-h-screen bg-pattern text-white">
       <Navbar scrolled={scrolled} />
       <main className="flex-grow">
         <Outlet />
