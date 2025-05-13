@@ -4,7 +4,6 @@ import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
 import AnimatedElement from "@/components/AnimatedElement";
 import VectorBackground from "@/components/VectorBackground";
-
 const Home = () => {
   const servicesData = [{
     title: "Brand Strategy & Design",
@@ -76,7 +75,7 @@ const Home = () => {
                 <Link to="/contact" className="bg-furi-red text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all hover:shadow-md">
                   Let's Fire It Up
                 </Link>
-                <Link to="/services" className="bg-gray-100 text-gray-800 px-8 py-3 rounded-md font-medium hover:bg-gray-200 transition-all">
+                <Link to="/services" className="bg-furi-red text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all hover:shadow-md">
                   Explore Services
                 </Link>
               </div>
@@ -191,5 +190,4 @@ const Home = () => {
       </section>
     </div>;
 };
-
 export default Home;
