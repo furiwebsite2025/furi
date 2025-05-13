@@ -1,8 +1,10 @@
+
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
 import AnimatedElement from "@/components/AnimatedElement";
+
 const Home = () => {
   const servicesData = [{
     title: "Brand Strategy & Design",
@@ -54,17 +56,32 @@ const Home = () => {
   }];
   return <div className="pt-20">
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center bg-white">
-        <div className="container mx-auto px-6 py-20 md:py-32">
+      <section className="min-h-[90vh] flex items-center justify-center bg-white relative overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="https://player.vimeo.com/progressive_redirect/playback/650190625/rendition/720p/file.mp4?loc=external&oauth2_token_id=1747418641&signature=694f215e524e855a2de3883b979d6183e6fd1bb9d777c27ba20fc51947da9198" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        
+        <div className="container mx-auto px-6 py-20 md:py-32 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <AnimatedElement animation="fade-in" className="mb-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
                 Feed UR Idea. <br />
                 We'll Fire It Into the Future.
               </h1>
             </AnimatedElement>
             <AnimatedElement animation="fade-in" delay={200} className="mb-12">
-              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
                 FURI is your AI-powered digital marketing partner — creating data-intelligent, emotionally resonant campaigns.
               </p>
             </AnimatedElement>
@@ -73,7 +90,7 @@ const Home = () => {
                 <Link to="/contact" className="bg-furi-red text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all hover:shadow-md">
                   Let's Fire It Up
                 </Link>
-                <Link to="/services" className="bg-gray-100 text-gray-800 px-8 py-3 rounded-md font-medium hover:bg-gray-200 transition-all">
+                <Link to="/services" className="bg-white bg-opacity-20 backdrop-blur-sm text-white hover:bg-opacity-30 px-8 py-3 rounded-md font-medium transition-all">
                   Explore Services
                 </Link>
               </div>
