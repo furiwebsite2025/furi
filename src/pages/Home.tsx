@@ -4,6 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
 import AnimatedElement from "@/components/AnimatedElement";
 import VectorBackground from "@/components/VectorBackground";
+
 const Home = () => {
   const servicesData = [{
     title: "Brand Strategy & Design",
@@ -56,7 +57,7 @@ const Home = () => {
   return <div className="pt-20">
       {/* Hero Section with Vector Animation */}
       <section className="min-h-[90vh] flex items-center justify-center bg-white relative overflow-hidden">
-        <VectorBackground />
+        <VectorBackground className="z-0" />
         <div className="container mx-auto px-6 py-20 md:py-32 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <AnimatedElement animation="fade-in" className="mb-8">
@@ -190,4 +191,5 @@ const Home = () => {
       </section>
     </div>;
 };
+
 export default Home;

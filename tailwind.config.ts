@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -105,12 +104,13 @@ export default {
 					'100%': { transform: 'scale(1)', opacity: '1' }
 				},
 				'float': {
-					'0%, 100%': { transform: 'translateY(0) translateX(0)' },
-					'50%': { transform: 'translateY(-20px) translateX(15px)' }
+					'0%': { transform: 'translateY(0) translateX(0)' },
+					'50%': { transform: 'translateY(-40px) translateX(30px)' },
+					'100%': { transform: 'translateY(0) translateX(0)' }
 				},
 				'pulse-slow': {
-					'0%, 100%': { opacity: '0.5' },
-					'50%': { opacity: '0.8' }
+					'0%, 100%': { opacity: '0.7' },
+					'50%': { opacity: '0.95' }
 				}
 			},
 			animation: {
