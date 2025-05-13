@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight, Check } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
@@ -56,10 +55,10 @@ const Home = () => {
   }];
   return <div className="pt-20">
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center bg-white relative overflow-hidden">
+      <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
         {/* Video Background */}
-        <div className="absolute inset-0 w-full h-full z-0">
-          <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+        <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 bg-gray-800 bg-opacity-60 z-10"></div>
           <video 
             autoPlay 
             muted 
@@ -67,7 +66,7 @@ const Home = () => {
             playsInline
             className="w-full h-full object-cover"
           >
-            <source src="https://player.vimeo.com/progressive_redirect/playback/650190625/rendition/720p/file.mp4?loc=external&oauth2_token_id=1747418641&signature=694f215e524e855a2de3883b979d6183e6fd1bb9d777c27ba20fc51947da9198" type="video/mp4" />
+            <source src="https://www.pexels.com/video/close-up-video-of-a-wavy-plastic-9150545/download/" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
