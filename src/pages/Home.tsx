@@ -3,6 +3,8 @@ import { ArrowRight, Check } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
 import AnimatedElement from "@/components/AnimatedElement";
+import VectorBackground from "@/components/VectorBackground";
+
 const Home = () => {
   const servicesData = [{
     title: "Brand Strategy & Design",
@@ -53,9 +55,10 @@ const Home = () => {
     image: "/lovable-uploads/cbbb5ccd-d655-47e2-bb74-7162d93000a0.png"
   }];
   return <div className="pt-20">
-      {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center bg-white">
-        <div className="container mx-auto px-6 py-20 md:py-32">
+      {/* Hero Section with Vector Animation */}
+      <section className="min-h-[90vh] flex items-center justify-center bg-white relative overflow-hidden">
+        <VectorBackground />
+        <div className="container mx-auto px-6 py-20 md:py-32 relative z-10">
           <div className="max-w-5xl mx-auto text-center">
             <AnimatedElement animation="fade-in" className="mb-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -188,4 +191,5 @@ const Home = () => {
       </section>
     </div>;
 };
+
 export default Home;
