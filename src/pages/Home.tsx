@@ -3,7 +3,6 @@ import { ArrowRight, Check } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
 import AnimatedElement from "@/components/AnimatedElement";
-
 const Home = () => {
   const servicesData = [{
     title: "Brand Strategy & Design",
@@ -55,32 +54,17 @@ const Home = () => {
   }];
   return <div className="pt-20">
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
-        {/* Video Background */}
-        <div className="absolute inset-0 w-full h-full">
-          <div className="absolute inset-0 bg-gray-800 bg-opacity-60 z-10"></div>
-          <video 
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="https://www.pexels.com/video/close-up-video-of-a-wavy-plastic-9150545/download/" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        
-        <div className="container mx-auto px-6 py-20 md:py-32 relative z-10">
+      <section className="min-h-[90vh] flex items-center justify-center bg-white">
+        <div className="container mx-auto px-6 py-20 md:py-32">
           <div className="max-w-5xl mx-auto text-center">
             <AnimatedElement animation="fade-in" className="mb-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                 Feed UR Idea. <br />
                 We'll Fire It Into the Future.
               </h1>
             </AnimatedElement>
             <AnimatedElement animation="fade-in" delay={200} className="mb-12">
-              <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto">
                 FURI is your AI-powered digital marketing partner — creating data-intelligent, emotionally resonant campaigns.
               </p>
             </AnimatedElement>
@@ -89,7 +73,7 @@ const Home = () => {
                 <Link to="/contact" className="bg-furi-red text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all hover:shadow-md">
                   Let's Fire It Up
                 </Link>
-                <Link to="/services" className="bg-white bg-opacity-20 backdrop-blur-sm text-white hover:bg-opacity-30 px-8 py-3 rounded-md font-medium transition-all">
+                <Link to="/services" className="bg-gray-100 text-gray-800 px-8 py-3 rounded-md font-medium hover:bg-gray-200 transition-all">
                   Explore Services
                 </Link>
               </div>
