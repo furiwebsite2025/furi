@@ -4,7 +4,6 @@ import SectionHeading from "@/components/SectionHeading";
 import CallToAction from "@/components/CallToAction";
 import AnimatedElement from "@/components/AnimatedElement";
 import VectorBackground from "@/components/VectorBackground";
-
 const Home = () => {
   const servicesData = [{
     title: "Brand Strategy & Design",
@@ -191,5 +190,4 @@ const Home = () => {
       </section>
     </div>;
 };
-
 export default Home;
